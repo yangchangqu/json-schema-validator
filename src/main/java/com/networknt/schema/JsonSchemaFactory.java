@@ -167,11 +167,11 @@ public class JsonSchemaFactory {
     }
 
     private final ObjectMapper mapper;
-    private final String defaultMetaSchemaURI;
+    protected final String defaultMetaSchemaURI;
     private final URISchemeFactory uriFactory;
     private final URISchemeFetcher uriFetcher;
     private final URNFactory urnFactory;
-    private final Map<String, JsonMetaSchema> jsonMetaSchemas;
+    protected final Map<String, JsonMetaSchema> jsonMetaSchemas;
     private final Map<String, String> uriMap;
     private final ConcurrentMap<URI, JsonSchema> uriSchemaCache = new ConcurrentHashMap<URI, JsonSchema>();
     private final boolean forceHttps;

@@ -75,4 +75,12 @@ public class NotValidator extends BaseJsonValidator implements JsonValidator {
             schema.initializeValidators();
         }
     }
+
+    @Override
+    public List<JsonSchema> getSchemas() {
+        if (null != schema) {
+            return Collections.singletonList(schema);
+        }
+        return Collections.emptyList();
+    }
 }

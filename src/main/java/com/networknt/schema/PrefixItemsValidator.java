@@ -197,4 +197,17 @@ public class PrefixItemsValidator extends BaseJsonValidator implements JsonValid
             additionalSchema.initializeValidators();
         }
     }
+
+    @Override
+    public List<JsonSchema> getSchemas() {
+        List<JsonSchema> schemas = new ArrayList<>();
+        if (null != schema) {
+            schemas.add(schema);
+        }
+        schemas.addAll(tupleSchema);
+        if (null != additionalSchema) {
+            tupleSchema.add(additionalSchema);
+        }
+        return schemas;
+    }
 }

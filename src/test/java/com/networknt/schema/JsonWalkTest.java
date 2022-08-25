@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -154,6 +155,26 @@ public class JsonWalkTest {
             @Override
             public Set<ValidationMessage> validate(JsonNode node, JsonNode rootNode, String at) {
                 return new TreeSet<ValidationMessage>();
+            }
+
+            @Override
+            public List<JsonSchema> getSchemas() {
+                return null;
+            }
+
+            @Override
+            public JsonSchema getParentSchema() {
+                return null;
+            }
+
+            @Override
+            public String getSchemaPath() {
+                return null;
+            }
+
+            @Override
+            public JsonNode getSchemaNode() {
+                return null;
             }
 
             @Override

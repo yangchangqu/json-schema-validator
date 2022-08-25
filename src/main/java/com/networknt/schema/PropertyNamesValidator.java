@@ -15,10 +15,7 @@
  */
 package com.networknt.schema;
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,5 +55,10 @@ public class PropertyNamesValidator extends BaseJsonValidator implements JsonVal
     @Override
     public void preloadJsonSchema() {
         innerSchema.initializeValidators();
+    }
+
+    @Override
+    public List<JsonSchema> getSchemas() {
+        return Collections.singletonList(innerSchema);
     }
 }

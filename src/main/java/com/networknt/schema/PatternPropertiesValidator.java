@@ -82,4 +82,9 @@ public class PatternPropertiesValidator extends BaseJsonValidator implements Jso
         }
         evaluatedPropertiesList.add(propertyPath);
     }
+
+    @Override
+    public List<JsonSchema> getSchemas() {
+        return new ArrayList<>(schemas.values());
+    }
 }

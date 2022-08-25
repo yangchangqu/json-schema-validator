@@ -25,6 +25,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class PropertiesValidator extends BaseJsonValidator implements JsonValidator {
     public static final String PROPERTY = "properties";
@@ -168,8 +169,8 @@ public class PropertiesValidator extends BaseJsonValidator implements JsonValida
 
     }
 
-    public Map<String, JsonSchema> getSchemas() {
-        return schemas;
+    public List<JsonSchema> getSchemas() {
+        return new ArrayList<>(schemas.values());
     }
 
 

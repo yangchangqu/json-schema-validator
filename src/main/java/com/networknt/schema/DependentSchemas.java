@@ -61,4 +61,9 @@ public class DependentSchemas extends BaseJsonValidator implements JsonValidator
     public void preloadJsonSchema() {
         preloadJsonSchemas(schemaDependencies.values());
     }
+
+    @Override
+    public List<JsonSchema> getSchemas() {
+        return new ArrayList<>(schemaDependencies.values());
+    }
 }

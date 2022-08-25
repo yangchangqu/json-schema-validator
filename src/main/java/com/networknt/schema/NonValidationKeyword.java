@@ -19,6 +19,7 @@ package com.networknt.schema;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -34,6 +35,26 @@ public class NonValidationKeyword extends AbstractKeyword {
         @Override
         public Set<ValidationMessage> validate(JsonNode node, JsonNode rootNode, String at) {
             return Collections.emptySet();
+        }
+
+        @Override
+        public List<JsonSchema> getSchemas() {
+            return Collections.emptyList();
+        }
+
+        @Override
+        public JsonSchema getParentSchema() {
+            return null;
+        }
+
+        @Override
+        public String getSchemaPath() {
+            return null;
+        }
+
+        @Override
+        public JsonNode getSchemaNode() {
+            return null;
         }
     }
 

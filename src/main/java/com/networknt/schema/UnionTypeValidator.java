@@ -90,4 +90,11 @@ public class UnionTypeValidator extends BaseJsonValidator implements JsonValidat
             validator.preloadJsonSchema();
         }
     }
+
+    @Override
+    public List<JsonSchema> getSchemas() {
+        List<JsonSchema> jsonSchemas = new ArrayList<>();
+        schemas.forEach(s -> jsonSchemas.addAll(s.getSchemas()));
+        return jsonSchemas;
+    }
 }

@@ -135,4 +135,9 @@ public class AllOfValidator extends BaseJsonValidator implements JsonValidator {
     public void preloadJsonSchema() {
         preloadJsonSchemas(schemas);
     }
+
+    @Override
+    public List<JsonSchema> getSchemas() {
+        return schemas;
+    }
 }

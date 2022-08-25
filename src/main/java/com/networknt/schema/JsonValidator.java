@@ -17,6 +17,7 @@
 package com.networknt.schema;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -62,15 +63,22 @@ public interface JsonValidator extends JsonSchemaWalker {
         // do nothing by default - to be overridden in subclasses
     }
 
-    default Map<String, JsonSchema> getSchemas() {
-        return Collections.emptyMap();
-    }
+    /**
+     * 获取该验证器内部涉及单个的JSON描述对象
+     */
+    List<JsonSchema> getSchemas();
 
-    default JsonSchema getSchema() {
-        return null;
-    }
+    JsonSchema getParentSchema();
 
-    default boolean isBaseValidator() {
-        return getSchemas().isEmpty() && getSchema() == null;
-    }
+    /**
+     * 获取该验证器对应的SCHEMA路径
+     * @return SCHEMA路径
+     */
+    String getSchemaPath();
+
+    /**
+     * 获取SCHEMA节点
+     * @return SCHEMA节点
+     */
+    JsonNode getSchemaNode();
 }

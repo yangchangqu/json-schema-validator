@@ -321,4 +321,9 @@ public class OneOfValidator extends BaseJsonValidator implements JsonValidator {
             scValidator.getSchema().initializeValidators();
         }
     }
+
+    @Override
+    public List<JsonSchema> getSchemas() {
+        return schemas.stream().map(ShortcutValidator::getSchema).collect(Collectors.toList());
+    }
 }

@@ -172,4 +172,12 @@ public class AdditionalPropertiesValidator extends BaseJsonValidator implements 
             additionalPropertiesSchema.initializeValidators();
         }
     }
+
+    @Override
+    public List<JsonSchema> getSchemas() {
+        if (additionalPropertiesSchema != null) {
+            return Collections.singletonList(additionalPropertiesSchema);
+        }
+        return Collections.emptyList();
+    }
 }

@@ -193,4 +193,17 @@ public class ItemsValidator extends BaseJsonValidator implements JsonValidator {
             additionalSchema.initializeValidators();
         }
     }
+
+    @Override
+    public List<JsonSchema> getSchemas() {
+        List<JsonSchema> schemas = new ArrayList<>();
+        if (null != schema) {
+            schemas.add(schema);
+        }
+        schemas.addAll(tupleSchema);
+        if (null != additionalSchema) {
+            schemas.add(additionalSchema);
+        }
+        return schemas;
+    }
 }

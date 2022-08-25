@@ -17,11 +17,7 @@
 package com.networknt.schema;
 
 import java.net.URI;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -179,6 +175,11 @@ public abstract class BaseJsonValidator implements JsonValidator {
         for (final JsonSchema schema: schemas) {
             schema.initializeValidators();
         }
+    }
+
+    @Override
+    public List<JsonSchema> getSchemas() {
+        return Collections.emptyList();
     }
 
     protected boolean isPartOfOneOfMultipleType() {

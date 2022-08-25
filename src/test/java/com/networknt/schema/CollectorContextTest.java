@@ -290,6 +290,26 @@ public class CollectorContextTest {
         }
 
         @Override
+        public List<JsonSchema> getSchemas() {
+            return null;
+        }
+
+        @Override
+        public JsonSchema getParentSchema() {
+            return null;
+        }
+
+        @Override
+        public String getSchemaPath() {
+            return null;
+        }
+
+        @Override
+        public JsonNode getSchemaNode() {
+            return null;
+        }
+
+        @Override
         public Set<ValidationMessage> validate(JsonNode rootNode) {
             return validate(rootNode, rootNode, BaseJsonValidator.AT_ROOT);
         }
@@ -364,6 +384,26 @@ public class CollectorContextTest {
             List<String> returnList = (List<String>) collectorContext.get(SAMPLE_COLLECTOR_OTHER);
             returnList.add(node.textValue());
             return new TreeSet<ValidationMessage>();
+        }
+
+        @Override
+        public List<JsonSchema> getSchemas() {
+            return null;
+        }
+
+        @Override
+        public JsonSchema getParentSchema() {
+            return null;
+        }
+
+        @Override
+        public String getSchemaPath() {
+            return null;
+        }
+
+        @Override
+        public JsonNode getSchemaNode() {
+            return null;
         }
 
         @Override

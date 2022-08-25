@@ -201,4 +201,9 @@ public class RefValidator extends BaseJsonValidator implements JsonValidator {
     public void preloadJsonSchema() {
         schema.getSchema().initializeValidators();
     }
+
+    @Override
+    public List<JsonSchema> getSchemas() {
+        return Collections.singletonList(schema.getSchema());
+    }
 }

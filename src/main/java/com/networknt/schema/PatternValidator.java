@@ -27,6 +27,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
@@ -55,8 +56,28 @@ public class PatternValidator implements JsonValidator {
     public Set<ValidationMessage> validate(JsonNode node, JsonNode rootNode, String at) {
         return delegate.validate(node, rootNode, at);
     }
-    
-	@Override
+
+    @Override
+    public List<JsonSchema> getSchemas() {
+        return delegate.getSchemas();
+    }
+
+    @Override
+    public JsonSchema getParentSchema() {
+        return delegate.getParentSchema();
+    }
+
+    @Override
+    public String getSchemaPath() {
+        return delegate.getSchemaPath();
+    }
+
+    @Override
+    public JsonNode getSchemaNode() {
+        return delegate.getSchemaNode();
+    }
+
+    @Override
 	public Set<ValidationMessage> walk(JsonNode node, JsonNode rootNode, String at, boolean shouldValidateSchema) {
 		return delegate.walk(node, rootNode, at, shouldValidateSchema);
 	}

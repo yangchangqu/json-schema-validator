@@ -142,4 +142,9 @@ public class IfValidator extends BaseJsonValidator implements JsonValidator {
             elseSchema.initializeValidators();
         }
     }
+
+    @Override
+    public List<JsonSchema> getSchemas() {
+        return Arrays.asList(ifSchema, thenSchema, elseSchema);
+    }
 }

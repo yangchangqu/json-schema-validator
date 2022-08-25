@@ -79,4 +79,9 @@ public class DependenciesValidator extends BaseJsonValidator implements JsonVali
     public void preloadJsonSchema() {
         preloadJsonSchemas(schemaDeps.values());
     }
+
+    @Override
+    public List<JsonSchema> getSchemas() {
+        return new ArrayList<>(schemaDeps.values());
+    }
 }
