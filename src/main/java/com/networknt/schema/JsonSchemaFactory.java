@@ -178,7 +178,7 @@ public class JsonSchemaFactory {
     private final boolean removeEmptyFragmentSuffix;
 
 
-    private JsonSchemaFactory(
+    protected JsonSchemaFactory(
             final ObjectMapper mapper,
             final String defaultMetaSchemaURI,
             final URISchemeFactory uriFactory,

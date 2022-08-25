@@ -100,7 +100,7 @@ public class PropertiesValidator extends BaseJsonValidator implements JsonValida
         return Collections.unmodifiableSet(errors);
     }
 
-    private void addToEvaluatedProperties(String propertyPath) {
+    protected void addToEvaluatedProperties(String propertyPath) {
         Object evaluatedProperties = CollectorContext.getInstance().get(UnEvaluatedPropertiesValidator.EVALUATED_PROPERTIES);
         List<String> evaluatedPropertiesList = null;
         if (evaluatedProperties == null) {
@@ -150,7 +150,7 @@ public class PropertiesValidator extends BaseJsonValidator implements JsonValida
         return propertySchema.getSchemaNode().get("default");
     }
 
-    private void walkSchema(Map.Entry<String, JsonSchema> entry, JsonNode node, JsonNode rootNode, String at,
+    protected void walkSchema(Map.Entry<String, JsonSchema> entry, JsonNode node, JsonNode rootNode, String at,
                             boolean shouldValidateSchema, Set<ValidationMessage> validationMessages, WalkListenerRunner propertyWalkListenerRunner) {
         JsonSchema propertySchema = entry.getValue();
         JsonNode propertyNode = (node == null ? null : node.get(entry.getKey()));

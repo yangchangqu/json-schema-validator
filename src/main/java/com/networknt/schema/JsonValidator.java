@@ -16,6 +16,8 @@
 
 package com.networknt.schema;
 
+import java.util.Collections;
+import java.util.Map;
 import java.util.Set;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -58,5 +60,17 @@ public interface JsonValidator extends JsonSchemaWalker {
      */
     default void preloadJsonSchema() throws JsonSchemaException {
         // do nothing by default - to be overridden in subclasses
+    }
+
+    default Map<String, JsonSchema> getSchemas() {
+        return Collections.emptyMap();
+    }
+
+    default JsonSchema getSchema() {
+        return null;
+    }
+
+    default boolean isBaseValidator() {
+        return getSchemas().isEmpty() && getSchema() == null;
     }
 }
