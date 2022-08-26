@@ -145,6 +145,16 @@ public class IfValidator extends BaseJsonValidator implements JsonValidator {
 
     @Override
     public List<JsonSchema> getSchemas() {
-        return Arrays.asList(ifSchema, thenSchema, elseSchema);
+        List<JsonSchema> schemas = new ArrayList<>();
+        if(null != ifSchema) {
+            schemas.add(ifSchema);
+        }
+        if(null != thenSchema) {
+            schemas.add(thenSchema);
+        }
+        if(null != elseSchema) {
+            schemas.add(elseSchema);
+        }
+        return schemas;
     }
 }
