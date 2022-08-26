@@ -433,7 +433,7 @@ public class JsonSchema extends BaseJsonValidator {
 
     /************************ END OF WALK METHODS **********************************/
 
-    private void setValidatorState(boolean isWalkEnabled, boolean shouldValidateSchema) {
+    protected void setValidatorState(boolean isWalkEnabled, boolean shouldValidateSchema) {
         // Get the Validator state object storing validation data
         Object stateObj = CollectorContext.getInstance().get(ValidatorState.VALIDATOR_STATE_KEY);
         // if one has not been created, instantiate one
@@ -499,7 +499,7 @@ public class JsonSchema extends BaseJsonValidator {
         }
     }
 
-    private Set<ValidationMessage> processUnEvaluatedProperties(JsonNode jsonNode, JsonNode rootNode, String at, boolean shouldValidateSchema,
+    protected Set<ValidationMessage> processUnEvaluatedProperties(JsonNode jsonNode, JsonNode rootNode, String at, boolean shouldValidateSchema,
                                                                 boolean fromValidate) {
         if (unevaluatedPropertiesValidator == null) {
             return Collections.emptySet();

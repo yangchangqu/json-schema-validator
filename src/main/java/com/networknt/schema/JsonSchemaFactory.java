@@ -40,15 +40,15 @@ public class JsonSchemaFactory {
 
 
     public static class Builder {
-        private ObjectMapper objectMapper = new ObjectMapper();
-        private String defaultMetaSchemaURI;
-        private final Map<String, URIFactory> uriFactoryMap = new HashMap<String, URIFactory>();
-        private final Map<String, URIFetcher> uriFetcherMap = new HashMap<String, URIFetcher>();
-        private URNFactory urnFactory;
-        private final Map<String, JsonMetaSchema> jsonMetaSchemas = new HashMap<String, JsonMetaSchema>();
-        private final Map<String, String> uriMap = new HashMap<String, String>();
-        private boolean forceHttps = true;
-        private boolean removeEmptyFragmentSuffix = true;
+        protected ObjectMapper objectMapper = new ObjectMapper();
+        protected String defaultMetaSchemaURI;
+        protected final Map<String, URIFactory> uriFactoryMap = new HashMap<String, URIFactory>();
+        protected final Map<String, URIFetcher> uriFetcherMap = new HashMap<String, URIFetcher>();
+        protected URNFactory urnFactory;
+        protected final Map<String, JsonMetaSchema> jsonMetaSchemas = new HashMap<String, JsonMetaSchema>();
+        protected final Map<String, String> uriMap = new HashMap<String, String>();
+        protected boolean forceHttps = true;
+        protected boolean removeEmptyFragmentSuffix = true;
 
         public Builder() {
             // Adds support for creating {@link URL}s.

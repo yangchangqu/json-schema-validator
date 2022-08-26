@@ -47,6 +47,9 @@ public class TypeFactory {
             if ("null".equals(type)) {
                 return JsonType.NULL;
             }
+            if ("datetime".equals(type)) {
+                return JsonType.DATETIME;
+            }
         }
 
         //Union Type Definition

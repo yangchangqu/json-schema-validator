@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 public class PropertiesValidator extends BaseJsonValidator implements JsonValidator {
     public static final String PROPERTY = "properties";
     private static final Logger logger = LoggerFactory.getLogger(PropertiesValidator.class);
-    private final Map<String, JsonSchema> schemas = new LinkedHashMap<>();
+    protected final Map<String, JsonSchema> schemas = new LinkedHashMap<>();
 
     public PropertiesValidator(String schemaPath, JsonNode schemaNode, JsonSchema parentSchema, ValidationContext validationContext) {
         super(schemaPath, schemaNode, parentSchema, ValidatorTypeCode.PROPERTIES, validationContext);

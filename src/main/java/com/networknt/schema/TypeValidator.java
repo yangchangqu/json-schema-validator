@@ -20,6 +20,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.JsonNodeType;
 import com.fasterxml.jackson.databind.node.TextNode;
 import com.networknt.schema.utils.JsonNodeUtil;
+import com.networknt.schema.utils.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -95,6 +96,10 @@ public class TypeValidator extends BaseJsonValidator implements JsonValidator {
                         }
                     } else if (schemaType == JsonType.NUMBER) {
                         if (isNumeric(node.textValue())) {
+                            return true;
+                        }
+                    } else if (schemaType == JsonType.DATETIME) {
+                        if (StringUtils.isNotBlank(node.textValue())) {
                             return true;
                         }
                     }

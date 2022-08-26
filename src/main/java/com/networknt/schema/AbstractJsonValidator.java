@@ -23,7 +23,7 @@ import java.util.Map;
 import java.util.Set;
 
 public abstract class AbstractJsonValidator implements JsonValidator {
-    private final String keyword;
+    protected final String keyword;
 
     protected AbstractJsonValidator(String keyword) {
         this.keyword = keyword;

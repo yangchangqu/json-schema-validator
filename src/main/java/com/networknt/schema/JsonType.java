@@ -25,6 +25,7 @@ public enum JsonType {
     BOOLEAN("boolean"),
     NULL("null"),
     ANY("any"),
+    DATETIME("datetime"),
 
     UNKNOWN("unknown"),
     UNION("union");
